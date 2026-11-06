@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AfroConecta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8C4303">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo-container">
+            <img src="g.jpegguuu" alt="Logo AfroConecta" class="logo">
+            <h1>AfroConecta</h1>
+        </div>
+    </header>
+
+    <main class="app-content">
+        <section id="inicio" class="tab-content active">
+            <div class="hero">
+                <h2>Tecnologia e Inovação Antirracista</h2>
+                <p>Uma plataforma educativa para valorização das relações étnico-raciais, promovendo a ancestralidade, a representatividade e o conhecimento.</p>
+            </div>
+        </section>
+
+        <!-- Eixo A: Biografias -->
+        <section id="biografias" class="tab-content">
+            <h2>Biografias e Protagonismo</h2>
+            <div class="cards-grid">
+                <article class="card">
+                    <img src="assets/dandara.png" alt="Dandara dos Palmares">
+                    <h3>Dandara dos Palmares</h3>
+                    <p>Liderança quilombola fundamental na resistência contra o sistema escravocrata no Brasil.</p>
+                </article>
+                <article class="card">
+                    <img src="assets/krenak.png" alt="Ailton Krenak">
+                    <h3>Ailton Krenak</h3>
+                    <p>Líder indígena, ambientalista, filósofo e escritor, figura central no movimento indígena brasileiro.</p>
+                </article>
+                <article class="card">
+                    <img src="assets/firmina.png" alt="Maria Firmina dos Reis">
+                    <h3>Maria Firmina dos Reis</h3>
+                    <p>Considerada a primeira romancista brasileira, autora da obra abolicionista "Úrsula".</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Eixo B: Cultura -->
+        <section id="cultura" class="tab-content">
+            <h2>Cultura e Ciência</h2>
+            <div class="content-block">
+                <h3>Contribuições de Matrizes Africanas e Povos Originários</h3>
+                <p>Das ciências astronómicas e medicinais aos avanços na engenharia de minas e riqueza gastronómica, as matrizes africanas e indígenas moldaram a ciência e a cultura do Brasil.</p>
+            </div>
+        </section>
+
+        <!-- Eixo C: Letramento -->
+        <section id="letramento" class="tab-content">
+            <h2>Conceitos & Letramento Racial</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Pesquisar conceito...">
+            </div>
+            <div id="glossarioContainer" class="glossario-list"></div>
+        </section>
+
+        <!-- Recursos Interativos -->
+        <section id="recursos" class="tab-content">
+            <h2>Recursos Interativos</h2>
+            
+            <div class="interactive-card">
+                <h3>Citação do Dia</h3>
+                <blockquote id="quoteText">"Enquanto a memória de uns for a dor de outros, a história não estará contida."</blockquote>
+                <p id="quoteAuthor">- Ailton Krenak</p>
+                <button id="btnQuote">Nova Citação</button>
+            </div>
+
+            <div class="interactive-card">
+                <h3>Quiz Étnico-Racial</h3>
+                <div id="quizContainer">
+                    <p id="quizQuestion">A carregar pergunta...</p>
+                    <div id="quizOptions" class="options-grid"></div>
+                    <p id="quizFeedback" class="feedback"></p>
+                    <p id="quizScore">Pontuação: <span id="scoreValue">0</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Barra de Navegação Inferior (Estilo App Mobile) -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-tab="inicio">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Início</span>
+        </button>
+        <button class="nav-btn" data-tab="biografias">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Biografias</span>
+        </button>
+        <button class="nav-btn" data-tab="cultura">
+            <span class="nav-icon">🎨</span>
+            <span class="nav-label">Cultura</span>
+        </button>
+        <button class="nav-btn" data-tab="letramento">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Letramento</span>
+        </button>
+        <button class="nav-btn" data-tab="recursos">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Quiz</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => console.error(err));
+        }
+    </script>
+</body>
+</html>
